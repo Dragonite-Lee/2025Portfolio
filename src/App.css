@@ -1,42 +1,239 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* App.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  background-color: #f5f5f7;
+  color: #333;
+  white-space: pre-line;
+}
+
+.app-wrapper {
+  position: relative;
+  min-height: 100vh; /* 전체 화면 높이 */
+  overflow: hidden;
+}
+
+.app-container {
+  max-width: 1200px;
+  min-width: 980px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 40px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 16px;
+}
+
+.intro-text {
+  line-height: 1.6;
+  color: #555;
+}
+.bold {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.intro-img {
+  
+  width: 350px;
+  height: 350px;
+}
+
+.project-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+}
+
+.project-title {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 600;
   text-align: center;
+  border-bottom: 1px solid #eee;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.navigation {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: #e0e0e0;
+}
+
+.content-wrapper {
+  display: flex;
+  min-height: 600px;
+}
+
+.overview-section {
+  width: 300px;
+  padding: 20px;
+  border-right: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+}
+
+.overview-section h3 {
+  margin: 15px 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.overview-section p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 15px 0;
+}
+
+.upvote-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.upvote-button {
+  background-color: #f5f5f7;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 10px 0;
+}
+
+.upvote-button:hover {
+  background-color: #e0e0e0;
+}
+
+.details-section {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.details-content {
+  padding: 20px;
+}
+
+.section-title {
+  background-color: #f0f2f5;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.action-item, .result-item, .lesson-item {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.action-item h4, .result-item h4, .lesson-item h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.action-item p, .result-item p, .lesson-item p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.content-wrapper {
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right {
+  animation: slideRight 0.6s ease;
+}
+
+.slide-left {
+  animation: slideLeft 0.6s ease;
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  50.1% {
+    transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@keyframes slideLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  50% {
+    opacity: 0;
+    transform: translateX(10%);
+  }
+  50.1% {
+    transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
